@@ -2,7 +2,7 @@ package my_array;
 
 public class RunClass {
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         MyArray myArray = new MyArray(3);
         myArray.print();
 

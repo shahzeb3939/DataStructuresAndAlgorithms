@@ -194,7 +194,24 @@ public class LinkedList {
     }
 
 
-    public void reverse(){}
+    public void reverse(){
+        if(first != null && size != 1) {
+            Node iteratorNode = first;
+            Node tempNextNode = first.getNext();
+            iteratorNode.setNext(null);
+            last = iteratorNode;
+            Node tempPreviousNode = iteratorNode;
+            iteratorNode = tempNextNode;
+            while (iteratorNode.getNext() != null) {
+                tempNextNode = iteratorNode.getNext();
+                iteratorNode.setNext(tempPreviousNode);
+                tempPreviousNode = iteratorNode;
+                iteratorNode = tempNextNode;
+            }
+            iteratorNode.setNext(tempPreviousNode);
+            first = iteratorNode;
+        }
+    }
 
 
     public void print() {
